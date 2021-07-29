@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html {height: 100%;}
+    body {
+      height: 100%;
+      margin: 0;
+      background: url(images/bg_bjypt_index.jpg) no-repeat center / 100% 100%;
+    }
+    .animation {
+      width: 700px;
+      height: 700px;
+      position: absolute;
+      top: 48%;
+      left: 15%;
+      transform: translateY(-50%) scale(.8); 
+      background: url(images/center.png) no-repeat center;
+      opacity: .9;
+    }
+    .animation .inner {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      z-index: 1;
+      background: url(images/inner.png) no-repeat center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: rotate 25s linear infinite;
+    }
+    .animation .outter {
+      position: absolute;
+      width: 645px;
+      height: 645px;
+      z-index: 100;
+      background: url(images/outter.png) no-repeat 3px -11px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: rotate 60s linear reverse infinite;
+    }
+    @keyframes rotate {
+      0% {transform: translate(-50%, -50%) rotateZ(0);}
+      100% {transform: translate(-50%, -50%) rotateZ(360deg);}
+    }
+    .gun {
+      position: absolute;
+      top: 15%;
+      left: 8%;
+      z-index: 200;
+      width: 150px;
+      height: 131px;
+      background: url(images/gun.png) no-repeat center;
+      animation: floating 5s linear infinite reverse;
+    }
+    .pilot {
+      position: absolute;
+      top: 15%;
+      right: 8%;
+      z-index: 200;
+      width: 150px;
+      height: 131px;
+      background: url(images/pilot.png) no-repeat center;
+      animation: floating 5s linear infinite ;
+    }
+    .aircraft {
+      position: absolute;
+      bottom: 15%;
+      left: 8%;
+      z-index: 200;
+      width: 150px;
+      height: 131px;
+      background: url(images/aircraft.png) no-repeat center;
+      animation: floating3 5s linear infinite;
+    }
+    .tank {
+      position: absolute;
+      bottom: 15%;
+      right: 8%;
+      z-index: 200;
+      width: 150px;
+      height: 131px;
+      background: url(images/tank.png) no-repeat center;
+      animation: floating2 5s linear infinite reverse;
+    }
+    @keyframes floating {
+      0% {transform: translateY(0)}
+      25% {transform: translateY(-10px)}
+      50% {transform: translateY(0)}
+      75% {transform: translateY(10px)}
+      100% {transform: translateY(0)}
+    }
+    @keyframes floating2 {
+      0% {transform: translate(0)}
+      25% {transform: translate(-10px, -10px)}
+      50% {transform: translate(0)}
+      75% {transform: translate(10px, 10px)}
+      100% {transform: translate(0)}
+    }
+    @keyframes floating3 {
+      0% {transform: translate(0)}
+      25% {transform: translate(10px, -10px)}
+      50% {transform: translate(0)}
+      75% {transform: translate(-10px, 10px)}
+      100% {transform: translate(0)}
+    }
+    .spark {
+      position: absolute;
+      z-index: 300;
+      width: 14px;
+      height: 14px;
+      offset-path: path("M337.07.5C521.36.71,670.5,38.24,670.5,84.5s-150,84-335,84S.5,130.89.5,84.5C.5,48,93.17,17,222.68,5.38,257.31,2.28,294.58.56,333.41.5");
+      animation: surround 10s linear infinite;
+    }
+    @keyframes surround {
+      0% {opacity: 0;offset-distance: 0;}
+      15% {opacity: 0;}
+      28% {opacity: 1;}
+      72% {opacity: 1;}
+      85% {opacity: 0;}
+      100% {opacity: 0;offset-distance: 100%;}
+    }
+    .star {
+      position: absolute;
+      z-index: 300;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      background: url(./images/track.png) no-repeat center 52%;
+      overflow: visible
+    }
+
+
+
+
+
+
+    .login-wrap {
+      position: absolute;
+      width: 340px;
+      height: 330px;
+      top: 45%;
+      right: 15%;
+      margin-top: -165px;
+      background: url(./images/login-bg.png) no-repeat;
+      background-size: 100%;
+      border-radius: 3px;
+      z-index: 1;
+    }
+    
+    .login-wrap::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: url(./images/login-bg-glow.png) no-repeat center / 100%;
+      animation: glow 2s linear infinite alternate;
+    }
+    .login-wrap::before {
+      content: "";
+      z-index: 100;
+      display: block;
+      position: absolute;
+      left: -6px;
+      top: -5px;
+      width: 92px;
+      height: 159px;
+      background: url(./images/top_left.png) no-repeat center / 100%;
+      animation: glow 2s linear infinite alternate;
+    }
+    @keyframes glow {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="animation">
+    <div class="inner"></div>
+    <div class="outter"></div>
+    <div class="gun"></div>
+    <div class="pilot"></div>
+    <div class="aircraft"></div>
+    <div class="tank"></div>
+    <svg class="star" viewBox="0 0 671 169" width="670" height="670">
+        <circle class="spark" r="4" fill="#91f7f9"></circle>
+    </svg>
+    <svg class="star" style="transform: rotateZ(70deg);" viewBox="0 0 671 169" width="670" height="670">
+      <circle class="spark" r="4" fill="#91f7f9"></circle>
+    </svg>
+  </div>
+
+</body>
+</html>
